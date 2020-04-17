@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "dayjs": "github:iamkun/dayjs",
+    "lodash-es": "github:lodash/lodash",
+    "tabler": "github:tabler/tabler"
+  }
+}
