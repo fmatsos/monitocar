@@ -9,8 +9,10 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% include 'menu/menu.html.twig' %}
         <div class="page">
+            {% include 'menu/menu.html.twig' %}
+            {% include 'header.html.twig' %}
+
             <div class="content">
                 <div class="container-fluid">
                     {% block body %}{% endblock %}
