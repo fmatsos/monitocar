@@ -2,11 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Monitocar{% endblock %}</title>
+        <title>Monitocar > {% block title %}{% endblock %}</title>
+        {{ encore_entry_link_tags('maincss') }}
+        {{ encore_entry_link_tags('tabler-plugins') }}
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% include 'menu/menu.html.twig' %}
+        <div class="page">
+            <div class="content">
+                <div class="container-fluid">
+                    {% block body %}{% endblock %}
+                </div>
+            </div>
+        </div>
+
+        {{ encore_entry_script_tags('mainjs') }}
         {% block javascripts %}{% endblock %}
     </body>
 </html>
