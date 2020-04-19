@@ -40,6 +40,11 @@ Encore
         './node_modules/tabler/dist/js/tabler.min.js',
     ])
 
+    .copyFiles({
+        from: './assets/img',
+        to: 'images/[path][name].[ext]'
+    })
+
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
