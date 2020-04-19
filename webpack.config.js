@@ -23,10 +23,12 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
     .addStyleEntry('maincss', [
         './node_modules/tabler/dist/css/tabler.min.css',
         './node_modules/@fortawesome/fontawesome-free/css/all.min.css',
+    ])
+    .addStyleEntry('appcss', [
+        './assets/css/menu.css',
     ])
     .addStyleEntry('tabler-plugins', [
         './node_modules/tabler/dist/css/tabler-flags.min.css',
