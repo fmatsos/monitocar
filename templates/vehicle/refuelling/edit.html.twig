@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Refuelling{% endblock %}
+
+{% block body %}
+    <h1>Edit Refuelling</h1>
+
+    {{ include('vehicle_refuelling/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('vehicle_refuelling_index') }}">back to list</a>
+
+    {{ include('vehicle_refuelling/_delete_form.html.twig') }}
+{% endblock %}

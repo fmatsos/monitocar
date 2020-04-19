@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Vehicle{% endblock %}
+
+{% block body %}
+    <h1>Vehicle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ vehicle.id }}</td>
+            </tr>
+            <tr>
+                <th>DistanceUnit</th>
+                <td>{{ vehicle.distanceUnit }}</td>
+            </tr>
+            <tr>
+                <th>FuelCapacity</th>
+                <td>{{ vehicle.fuelCapacity }}</td>
+            </tr>
+            <tr>
+                <th>FuelConsumption</th>
+                <td>{{ vehicle.fuelConsumption }}</td>
+            </tr>
+            <tr>
+                <th>MileageFromOdometers</th>
+                <td>{{ vehicle.mileageFromOdometers ? vehicle.mileageFromOdometers|join(', ') : '' }}</td>
+            </tr>
+            <tr>
+                <th>ModelDate</th>
+                <td>{{ vehicle.modelDate ? vehicle.modelDate|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ vehicle.name }}</td>
+            </tr>
+            <tr>
+                <th>PurchaseDate</th>
+                <td>{{ vehicle.purchaseDate ? vehicle.purchaseDate|date('Y-m-d') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('vehicle_vehicle_index') }}">back to list</a>
+
+    <a href="{{ path('vehicle_vehicle_edit', {'id': vehicle.id}) }}">edit</a>
+
+    {{ include('vehicle_vehicle/_delete_form.html.twig') }}
+{% endblock %}

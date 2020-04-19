@@ -1,0 +1,59 @@
+{{ form_start(form) }}
+    <div class="row form-group">
+        {{ form_label(form.name, 'Nom du véhicule', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4">
+            {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+        </div>
+    </div>
+
+    <div class="row form-group">
+        {{ form_label(form.purchaseDate, 'Date d\'achat', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4">
+            {{ form_widget(form.purchaseDate, {'attr': {'class': 'form-control flatpickr-input'}}) }}
+        </div>
+    </div>
+
+    <div class="row form-group">
+        {{ form_label(form.modelDate, 'Mise en circulation', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4">
+            {{ form_widget(form.modelDate, {'attr': {'class': 'form-control flatpickr-input'}}) }}
+        </div>
+    </div>
+
+    <div class="row form-group">
+        {{ form_label(form.fuelType, 'Type de carburant', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4">{{ form_widget(form.fuelType, {'attr': {'class': 'form-select'}}) }}</div>
+    </div>
+
+    <div class="row form-group">
+        {{ form_label(form.fuelCapacity, 'Capacité du réservoir', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4">
+            <div class="input-group">
+                {{ form_widget(form.fuelCapacity, {'attr': {'class': 'form-control'}}) }}
+                <span class="input-group-text">litres</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        {{ form_label(form.fuelConsumption, 'Consommation', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4">
+            <div class="input-group">
+                {{ form_widget(form.fuelConsumption, {'attr': {'class': 'form-control'}}) }}
+                <span class="input-group-text">litres</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row form-group">
+        {{ form_label(form.mileageFromOdometers, 'Kilométrage', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
+        <div class="col-4"> {{ form_widget(form.mileageFromOdometers, {'attr': {'class': 'form-control'}}) }}</div>
+    </div>
+
+    <div class="form-footer">
+        <button class="btn btn-primary">
+            <i class="fas fa-save mr-2"></i>
+            {{ button_label|default('Sauvegarder') }}
+        </button>
+    </div>
+{{ form_end(form) }}
