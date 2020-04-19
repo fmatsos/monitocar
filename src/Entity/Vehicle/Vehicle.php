@@ -62,7 +62,7 @@ class Vehicle
      *
      * @Assert\NotNull
      */
-    public FuelType $fuelType;
+    public ?FuelType $fuelType;
 
     /**
      * @ORM\Column(type="array", nullable=true)
@@ -80,6 +80,7 @@ class Vehicle
      * @ORM\Column(type="string", nullable=false)
      *
      * @Assert\Type(type="string")
+     * @Assert\NotBlank
      */
     public string $name;
 
@@ -99,7 +100,13 @@ class Vehicle
     public function __construct()
     {
         $this->distanceUnit = self::KILOMETERS;
+        $this->fuelCapacity = null;
+        $this->fuelConsumption = null;
+        $this->fuelType = null;
         $this->mileageFromOdometers = [];
+        $this->modelDate = null;
+        $this->name = '';
+        $this->purchaseDate = null;
         $this->refuellings = new ArrayCollection();
     }
 
