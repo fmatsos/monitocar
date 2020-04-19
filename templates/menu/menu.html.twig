@@ -1,0 +1,117 @@
+<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
+    <div class="container">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <a href="/" class="navbar-brand navbar-brand-autodark">
+            <i class="fas fa-car"></i>&nbsp;Monitocar</span>
+        </a>
+
+        {% include 'menu/mobile-menu.html.twig' %}
+
+        <div class="collapse navbar-collapse" id="navbar-menu">
+            <ul class="navbar-nav pt-lg-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-home"></i>
+                        </span>
+                        Accueil
+                    </a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#navbar-vehicles" data-toggle="dropdown" role="button" aria-expanded="false">
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-car-side"></i>
+                        </span>
+                        Véhicules
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-columns dropdown-menu-columns-2">
+                        <li>
+                            <div class="input-icon">
+                                <input type="text" class="form-control" placeholder="Rechercher un véhicule...">
+                                <span class="input-icon-addon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" >
+                                <i class="fas fa-plus-square mr-1"></i>Ajouter un véhicule
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#" >
+                                <i class="fas fa-list mr-1"></i>Liste des véhicules
+                            </a>
+                        </li>
+                        <li class="dropdown-divider"></li>
+                        {#<li class="dropright">
+                            <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-toggle="dropdown" role="button" aria-expanded="false" >
+                                Authentication
+                            </a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Sign in</a>
+                                <a href="#" class="dropdown-item">Sign up</a>
+                                <a href="#" class="dropdown-item">Forgot password</a>
+                                <a href="#" class="dropdown-item">Terms of service</a>
+                            </div>
+                        </li>#}
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-tools"></i>
+                        </span>
+                        Entretien
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-euro-sign"></i>
+                        </span>
+                        Finances
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-landmark"></i>
+                        </span>
+                        Administratif
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-chart-pie"></i>
+                        </span>
+                        Statistiques
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-calculator"></i>
+                        </span>
+                        Calculette
+                    </a>
+                </li>
+                <li class="dropdown-divider"></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/" >
+                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
+                            <i class="icon fas fa-cubes"></i>
+                        </span>
+                        Réglages
+                    </a>
+                </li>
+            </ul>
+
+            <p class="text-center">Version 0.0.1</p>
+        </div>
+    </div>
+</aside>
