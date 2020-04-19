@@ -12,7 +12,7 @@
  *
  */
 
-namespace App\Database\Entity\Vehicle;
+namespace App\Entity\Vehicle;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
@@ -20,7 +20,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\Vehicle\FuelTypeRepository")
  */
 class FuelType
 {
@@ -40,13 +40,13 @@ class FuelType
     public string $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Database\Entity\Vehicle\Vehicle", mappedBy="fuelType")
+     * @ORM\OneToMany(targetEntity="Vehicle", mappedBy="fuelType")
      * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
      */
     public ?Collection $vehicles;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Database\Entity\Vehicle\Refuelling", mappedBy="fuelType")
+     * @ORM\OneToMany(targetEntity="Refuelling", mappedBy="fuelType")
      * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
      */
     public ?Collection $refuellings;

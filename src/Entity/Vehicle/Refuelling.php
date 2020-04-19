@@ -12,13 +12,13 @@
  *
  */
 
-namespace App\Database\Entity\Vehicle;
+namespace App\Entity\Vehicle;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="App\Repository\Vehicle\RefuellingRepository")
  */
 class Refuelling
 {
@@ -30,7 +30,7 @@ class Refuelling
     public ?int $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Database\Entity\Vehicle\Vehicle", inversedBy="refuellings")
+     * @ORM\ManyToOne(targetEntity="Vehicle", inversedBy="refuellings")
      * @ORM\JoinColumn(nullable=false)
      *
      * @Assert\NotNull
@@ -38,7 +38,7 @@ class Refuelling
     public Vehicle $vehicle;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Database\Entity\Vehicle\FuelType", inversedBy="refuellings")
+     * @ORM\ManyToOne(targetEntity="FuelType", inversedBy="refuellings")
      * @ORM\JoinColumn(nullable=false)
      *
      * @Assert\NotNull
