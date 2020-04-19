@@ -57,7 +57,7 @@ class Vehicle
     public ?float $fuelConsumption;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\FuelType", inversedBy="vehicles")
+     * @ORM\ManyToOne(targetEntity="App\Database\Entity\Vehicle\FuelType", inversedBy="vehicles")
      * @ORM\JoinColumn(nullable=false)
      *
      * @Assert\NotNull
@@ -91,7 +91,7 @@ class Vehicle
     public ?\DateTimeInterface $purchaseDate;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Refuelling", mappedBy="vehicle")
+     * @ORM\OneToMany(targetEntity="App\Database\Entity\Vehicle\Refuelling", mappedBy="vehicle")
      * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
      */
     public ?Collection $refuellings;

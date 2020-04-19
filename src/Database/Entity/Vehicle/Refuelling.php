@@ -30,7 +30,7 @@ class Refuelling
     public ?int $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Vehicle\Vehicle", inversedBy="refuellings")
+     * @ORM\ManyToOne(targetEntity="App\Database\Entity\Vehicle\Vehicle", inversedBy="refuellings")
      * @ORM\JoinColumn(nullable=false)
      *
      * @Assert\NotNull
@@ -38,7 +38,7 @@ class Refuelling
     public Vehicle $vehicle;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\FuelType", inversedBy="refuellings")
+     * @ORM\ManyToOne(targetEntity="App\Database\Entity\Vehicle\FuelType", inversedBy="refuellings")
      * @ORM\JoinColumn(nullable=false)
      *
      * @Assert\NotNull

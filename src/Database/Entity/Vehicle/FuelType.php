@@ -40,13 +40,13 @@ class FuelType
     public string $name;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Vehicle\Vehicle", mappedBy="fuelType")
+     * @ORM\OneToMany(targetEntity="App\Database\Entity\Vehicle\Vehicle", mappedBy="fuelType")
      * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
      */
     public ?Collection $vehicles;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Refuelling", mappedBy="fuelType")
+     * @ORM\OneToMany(targetEntity="App\Database\Entity\Vehicle\Refuelling", mappedBy="fuelType")
      * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
      */
     public ?Collection $refuellings;
