@@ -1,7 +1,14 @@
 {
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.13.0",
+    "bootstrap": "^4.4.1",
     "dayjs": "github:iamkun/dayjs",
+    "jquery-slim": "^3.0.0",
     "lodash-es": "github:lodash/lodash",
     "tabler": "github:tabler/tabler"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.29.1",
+    "webpack-notifier": "^1.6.0"
   }
 }
