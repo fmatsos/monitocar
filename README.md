@@ -15,4 +15,6 @@ If this is rst time you intall application, launch:
 
 Or `php bin/console doctrine:schema:update --force` to update your database schema.
 
+To add basis datas to database, run fixtures with `php bin/console doctrine:fixtures:load`
+
 And finally `[yarn|npm] run build` to compile assets.
