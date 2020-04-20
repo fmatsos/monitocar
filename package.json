@@ -2,13 +2,19 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.13.0",
     "bootstrap": "^4.4.1",
-    "dayjs": "github:iamkun/dayjs",
+    "dayjs": "^1.8.24",
     "jquery-slim": "^3.0.0",
-    "lodash-es": "github:lodash/lodash",
-    "tabler": "github:tabler/tabler"
+    "lodash-es": "^4.17.15",
+    "tabler": "^1.0.0-alpha.6"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.29.1",
     "webpack-notifier": "^1.6.0"
+  },
+  "scripts": {
+    "dev-server": "encore dev-server",
+    "dev": "encore dev",
+    "watch": "encore dev --watch",
+    "build": "encore production --progress"
   }
 }
