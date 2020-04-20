@@ -29,8 +29,8 @@
         {{ form_label(form.fuelCapacity, 'Capacité du réservoir', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
         <div class="col-4">
             <div class="input-group">
-                {{ form_widget(form.fuelCapacity, {'attr': {'class': 'form-control'}}) }}
-                <span class="input-group-text">litres</span>
+                {{ form_widget(form.fuelCapacity, {'attr': {'class': 'form-control col-10'}}) }}
+                <span class="input-group-text col-2">Litres</span>
             </div>
         </div>
     </div>
@@ -39,8 +39,8 @@
         {{ form_label(form.fuelConsumption, 'Consommation', {'label_attr': {'class': 'form-label col-2 col-form-label'}}) }}
         <div class="col-4">
             <div class="input-group">
-                {{ form_widget(form.fuelConsumption, {'attr': {'class': 'form-control'}}) }}
-                <span class="input-group-text">litres</span>
+                {{ form_widget(form.fuelConsumption, {'attr': {'class': 'form-control col-10'}}) }}
+                <span class="input-group-text col-2">L <sub>/100</sub></span>
             </div>
         </div>
     </div>
