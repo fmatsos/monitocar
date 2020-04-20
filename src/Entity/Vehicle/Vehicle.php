@@ -32,18 +32,18 @@ class Vehicle
     public ?int $id;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="decimal", nullable=true)
      *
-     * @Assert\Type(type="float")
+     * @Assert\Type(type="digit")
      */
-    public ?float $fuelCapacity;
+    public ?string $fuelCapacity;
 
     /**
-     * @ORM\Column(type="float", nullable=true)
+     * @ORM\Column(type="decimal", nullable=true)
      *
-     * @Assert\Type(type="float")
+     * @Assert\Type(type="digit")
      */
-    public ?float $fuelConsumption;
+    public ?string $fuelConsumption;
 
     /**
      * @ORM\ManyToOne(targetEntity="FuelType", inversedBy="vehicles")
@@ -54,9 +54,11 @@ class Vehicle
     public ?FuelType $fuelType;
 
     /**
-     * @ORM\Column(type="array", nullable=true)
+     * @ORM\Column(type="decimal", nullable=true)
+     *
+     * @Assert\Type(type="digit")
      */
-    public array $mileageFromOdometers;
+    public ?string $mileageFromOdometers;
 
     /**
      * @ORM\Column(type="date", nullable=true)
@@ -91,27 +93,11 @@ class Vehicle
         $this->fuelCapacity = null;
         $this->fuelConsumption = null;
         $this->fuelType = null;
-        $this->mileageFromOdometers = [];
+        $this->mileageFromOdometers = null;
         $this->modelDate = null;
         $this->name = '';
         $this->purchaseDate = null;
         $this->refuellings = new ArrayCollection();
-    }
-
-    public function addMileageFromOdometer(float $mileageFromOdometer): void
-    {
-        if (in_array($mileageFromOdometer, $this->mileageFromOdometers, true) === false) {
-            $this->mileageFromOdometers[] = $mileageFromOdometer;
-        }
-    }
-
-    public function removeMileageFromOdometer(float $mileageFromOdometer): void
-    {
-        $index = array_search($mileageFromOdometer, $this->mileageFromOdometers, true);
-
-        if ($index) {
-            $this->mileageFromOdometers = array_slice($this->mileageFromOdometers, $index, 1);
-        }
     }
 
     public function addRefuelling(Refuelling $refuelling): void
