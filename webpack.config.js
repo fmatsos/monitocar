@@ -31,7 +31,7 @@ Encore
         './assets/css/menu.css',
     ])
     .addStyleEntry('tabler-plugins', [
-        './node_modules/tabler/dist/css/tabler-flags.min.css',
+        // './node_modules/tabler/dist/css/tabler-flags.min.css',
         './node_modules/tabler/dist/css/tabler-buttons.min.css',
     ])
     .addEntry('mainjs', [
