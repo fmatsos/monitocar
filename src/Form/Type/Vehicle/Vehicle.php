@@ -1,4 +1,15 @@
 <?php
+/**
+ * This file is part of the Monitocar application.
+ *
+ * Created by Franck Matsos <franck@matsos.fr>
+ *
+ * Last modified: 21/04/2020 00:55
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ */
 
 namespace App\Form\Type\Vehicle;
 
@@ -6,7 +17,6 @@ use App\Entity\Vehicle\FuelType;
 use App\Entity\Vehicle\Vehicle as VehicleEntity;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;

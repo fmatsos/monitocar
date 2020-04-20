@@ -1,8 +1,19 @@
 <?php
+/**
+ * This file is part of the Monitocar application.
+ *
+ * Created by Franck Matsos <franck@matsos.fr>
+ *
+ * Last modified: 21/04/2020 00:55
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ *
+ */
 
 namespace App\Controller\Vehicle;
 
-use App\Entity\Vehicle\Vehicle;
+use App\Entity\Vehicle\Vehicle as VehicleEntity;
 use App\Form\Type\Vehicle\Vehicle as VehicleType;
 use App\Repository\Vehicle\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -30,7 +41,7 @@ class VehicleController extends AbstractController
      */
     public function new(Request $request): Response
     {
-        $vehicle = new Vehicle();
+        $vehicle = new VehicleEntity();
         $form = $this->createForm(VehicleType::class, $vehicle);
         $form->handleRequest($request);
 
@@ -51,7 +62,7 @@ class VehicleController extends AbstractController
     /**
      * @Route("/{id}", name="vehicle_vehicle_show", methods={"GET"})
      */
-    public function show(Vehicle $vehicle): Response
+    public function show(VehicleEntity $vehicle): Response
     {
         return $this->render('vehicle/vehicle/show.html.twig', [
             'vehicle' => $vehicle,
@@ -61,7 +72,7 @@ class VehicleController extends AbstractController
     /**
      * @Route("/{id}/edit", name="vehicle_vehicle_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Vehicle $vehicle): Response
+    public function edit(Request $request, VehicleEntity $vehicle): Response
     {
         $form = $this->createForm(VehicleType::class, $vehicle);
         $form->handleRequest($request);
@@ -81,7 +92,7 @@ class VehicleController extends AbstractController
     /**
      * @Route("/{id}", name="vehicle_vehicle_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Vehicle $vehicle): Response
+    public function delete(Request $request, VehicleEntity $vehicle): Response
     {
         if ($this->isCsrfTokenValid('delete'.$vehicle->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();

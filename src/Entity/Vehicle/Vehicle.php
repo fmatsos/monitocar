@@ -83,6 +83,8 @@ class Vehicle
     public ?\DateTimeInterface $purchaseDate;
 
     /**
+     * @var Collection|Refuelling[]
+     *
      * @ORM\OneToMany(targetEntity="Refuelling", mappedBy="vehicle")
      * @ORM\JoinTable(inverseJoinColumns={@ORM\JoinColumn(unique=true)})
      */
