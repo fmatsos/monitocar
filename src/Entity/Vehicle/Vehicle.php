@@ -24,23 +24,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Vehicle
 {
-    const KILOMETERS = "kms";
-    const MILES = "miles";
-
     /**
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\Column(type="integer")
      */
     public ?int $id;
-
-    /**
-     * @ORM\Column(type="string", nullable=false, length=25)
-     *
-     * @Assert\Type(type="string")
-     * @Assert\NotBlank
-     */
-    public string $distanceUnit;
 
     /**
      * @ORM\Column(type="float", nullable=true)
@@ -99,7 +88,6 @@ class Vehicle
 
     public function __construct()
     {
-        $this->distanceUnit = self::KILOMETERS;
         $this->fuelCapacity = null;
         $this->fuelConsumption = null;
         $this->fuelType = null;
