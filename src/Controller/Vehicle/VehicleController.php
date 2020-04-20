@@ -3,7 +3,7 @@
 namespace App\Controller\Vehicle;
 
 use App\Entity\Vehicle\Vehicle;
-use App\Form\Vehicle\VehicleType;
+use App\Form\Type\Vehicle\Vehicle as VehicleType;
 use App\Repository\Vehicle\VehicleRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

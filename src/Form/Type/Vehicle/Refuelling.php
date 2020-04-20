@@ -2,12 +2,12 @@
 
 namespace App\Form\Vehicle;
 
-use App\Entity\Vehicle\Refuelling;
+use App\Entity\Vehicle\Refuelling as RefuellingEntity;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class RefuellingType extends AbstractType
+class Refuelling extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -22,7 +22,7 @@ class RefuellingType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Refuelling::class,
+            'data_class' => RefuellingEntity::class,
         ]);
     }
 }
