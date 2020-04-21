@@ -1,3 +1,5 @@
+Documentation available here (in French only) : https://docs.monitocar.app/
+
 ### Install instructions
 
 You must have PHP 7.4 and Composer installed.
