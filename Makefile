@@ -46,7 +46,7 @@ assets-install: yarn.lock ## Install assets dependencies
 assets-update: package.json ## Update assets dependencies
 	$(DEPENDENCY_BIN) update
 
-asserts: assets-install ## Install or update assets dependencies automatically
+assets: assets-install ## Install or update assets dependencies automatically
 
 dev: ## Rebuild assets for the dev env
 	$(DEPENDENCY_BIN) run encore dev
