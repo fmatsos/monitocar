@@ -35,7 +35,7 @@ class Refuelling
      *
      * @Assert\NotNull
      */
-    public Vehicle $vehicle;
+    public ?Vehicle $vehicle;
 
     /**
      * @ORM\ManyToOne(targetEntity="FuelType", inversedBy="refuellings")
@@ -43,7 +43,7 @@ class Refuelling
      *
      * @Assert\NotNull
      */
-    public FuelType $fuelType;
+    public ?FuelType $fuelType;
 
     /**
      * @ORM\Column(type="float", nullable=true)
@@ -58,4 +58,13 @@ class Refuelling
      * @Assert\Type(type="float")
      */
     public ?float $quantity;
+
+    public function __construct()
+    {
+        $this->id = null;
+        $this->vehicle = null;
+        $this->fuelType = null;
+        $this->price = null;
+        $this->quantity = null;
+    }
 }

@@ -53,8 +53,10 @@ class FuelType
 
     public function __construct()
     {
-        $this->vehicles = new ArrayCollection();
-        $this->refuellings = new ArrayCollection();
+        $this->id = null;
+        $this->name = '';
+        $this->vehicles = new ArrayCollection;
+        $this->refuellings = new ArrayCollection;
     }
 
     public function addVehicle(Vehicle $vehicle): void
