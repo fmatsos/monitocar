@@ -12,10 +12,6 @@
                 <td>{{ vehicle.id }}</td>
             </tr>
             <tr>
-                <th>DistanceUnit</th>
-                <td>{{ vehicle.distanceUnit }}</td>
-            </tr>
-            <tr>
                 <th>FuelCapacity</th>
                 <td>{{ vehicle.fuelCapacity }}</td>
             </tr>
@@ -46,5 +42,5 @@
 
     <a href="{{ path('vehicle_vehicle_edit', {'id': vehicle.id}) }}">edit</a>
 
-    {{ include('vehicle_vehicle/_delete_form.html.twig') }}
+    {{ include('vehicle/vehicle/_delete_form.html.twig') }}
 {% endblock %}
