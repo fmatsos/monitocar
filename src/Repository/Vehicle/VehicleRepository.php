@@ -13,9 +13,14 @@
 
 namespace App\Repository\Vehicle;
 
-use Doctrine\ORM\EntityRepository;
+use App\Entity\Vehicle\Vehicle;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
-class VehicleRepository extends EntityRepository
+class VehicleRepository extends ServiceEntityRepository
 {
-
+    public function __construct(ManagerRegistry $registry)
+    {
+        parent::__construct($registry, Vehicle::class);
+    }
 }
