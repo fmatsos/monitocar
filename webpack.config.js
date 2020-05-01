@@ -24,20 +24,16 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addStyleEntry('maincss', [
-        './node_modules/tabler/dist/css/tabler.min.css',
+        './node_modules/admin-lte/dist/css/adminlte.min.css',
         './node_modules/@fortawesome/fontawesome-free/css/all.min.css',
     ])
     .addStyleEntry('appcss', [
         './assets/css/menu.css',
     ])
-    .addStyleEntry('tabler-plugins', [
-        // './node_modules/tabler/dist/css/tabler-flags.min.css',
-        './node_modules/tabler/dist/css/tabler-buttons.min.css',
-    ])
     .addEntry('mainjs', [
         './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
         './node_modules/jquery-slim/dist/jquery.slim.min.js',
-        './node_modules/tabler/dist/js/tabler.min.js',
+        './node_modules/admin-lte/dist/js/adminlte.min.js',
     ])
 
     .copyFiles({
