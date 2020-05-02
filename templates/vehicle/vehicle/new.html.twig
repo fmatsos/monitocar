@@ -3,15 +3,5 @@
 {% block title %}New Vehicle{% endblock %}
 
 {% block body %}
-    <section class="card">
-        <h1 class="card-header">Ajouter un véhicule</h1>
-
-        <div class="card-body">
-            {{ include('vehicle/vehicle/_form.html.twig') }}
-        </div>
-
-        <div class="card-footer">
-            <a href="{{ path('vehicle_vehicle_index') }}">Retour à la liste</a>
-        </div>
-    </section>
+    {{ include('vehicle/vehicle/_form.html.twig') }}
 {% endblock %}

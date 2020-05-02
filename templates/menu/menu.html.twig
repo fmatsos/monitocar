@@ -1,125 +1,109 @@
-<aside class="navbar navbar-vertical navbar-expand-lg navbar-dark">
-    <div class="container">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <a href="/" class="brand-link">
+        <img class="fas fa-car brand-image img-circle elevation-3" style="opacity: .8" src="{{ asset('build/images/monitocar-logo-x50.png') }}">
+        <span class="brand-text font-weight-light">&nbsp;Monitocar</span>
+    </a>
 
-        <a href="/" class="navbar-brand navbar-brand-autodark">
-            <i class="fas fa-car"></i>&nbsp;Monitocar</span>
-        </a>
-
-        {% include 'menu/mobile-menu.html.twig' %}
-
-        <div class="collapse navbar-collapse" id="navbar-menu">
-            <ul class="navbar-nav pt-lg-3">
-                <li class="nav-item input-icon">
-                    <input type="text" class="form-control" placeholder="Rechercher...">
-                    <span class="input-icon-addon">
-                        <i class="fas fa-search"></i>
-                    </span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-home"></i>
-                        </span>
-                        Accueil
+    {# Menu #}
+    <section class="sidebar">
+        <nav class="mt-2">
+            <ul class="nav nav-flat nav-sidebar nav-child-indent flex-column" data-widget="treeview" role="menu">
+                <li class="nav-item has-treeview">
+                    <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-car-side"></i>
+                        <p>
+                            Véhicules
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#navbar-vehicles" data-toggle="dropdown" role="button" aria-expanded="false">
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-car-side"></i>
-                        </span>
-                        Véhicules
-                    </a>
-                    <ul class="dropdown-menu dropdown-menu-columns dropdown-menu-columns-2">
-                        <li>
-                            <a class="dropdown-item" href="{{ path('vehicle_vehicle_new') }}" >
-                                <i class="fas fa-plus-square mr-1"></i>Ajouter un véhicule
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('vehicle_vehicle_new') }}">
+                                <i class="nav-icon fas fa-plus-square"></i>
+                                <p>Ajouter un véhicule</p>
                             </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="{{ path('vehicle_refuelling_new')}}" >
-                                <i class="fas fa-gas-pump mr-1"></i>Ajouter un plein
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ path('vehicle_refuelling_new')}}">
+                                <i class="nav-icon fas fa-gas-pump"></i>
+                                <p>Ajouter un plein</p>
                             </a>
                         </li>
-                        <li>
-                            <a class="dropdown-item" href="#" >
-                                <i class="fas fa-list mr-1"></i>Liste des véhicules
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <i class="nav-icon fas fa-list"></i>
+                                <p>Liste des véhicules</p>
                             </a>
                         </li>
-                        <li class="dropdown-divider"></li>
-                        {#<li class="dropright">
-                            <a class="dropdown-item dropdown-toggle" href="#sidebar-authentication" data-toggle="dropdown" role="button" aria-expanded="false" >
-                                Authentication
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Sign in</a>
-                                <a href="#" class="dropdown-item">Sign up</a>
-                                <a href="#" class="dropdown-item">Forgot password</a>
-                                <a href="#" class="dropdown-item">Terms of service</a>
-                            </div>
-                        </li>#}
                     </ul>
                 </li>
+
+                <!-- SOON -->
                 <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-tools"></i>
-                        </span>
-                        Entretien
-                        <span class="badge menu-badge bg-azure">Soon</span>
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-tools"></i>
+                        <p>
+                            Entretien
+                            <span class="badge badge-info">Soon</span>
+                        </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-euro-sign"></i>
-                        </span>
-                        Finances
-                        <span class="badge menu-badge bg-azure">Soon</span>
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-euro-sign"></i>
+                        <p>
+                            Finances
+                            <span class="badge badge-info">Soon</span>
+                        </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-landmark"></i>
-                        </span>
-                        Administratif
-                        <span class="badge menu-badge bg-azure">Soon</span>
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-landmark"></i>
+                        <p>
+                            Administratif
+                            <span class="badge badge-info">Soon</span>
+                        </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-chart-pie"></i>
-                        </span>
-                        Statistiques
-                        <span class="badge menu-badge bg-azure">Soon</span>
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-chart-pie"></i>
+                        <p>
+                            Statistiques
+                            <span class="badge badge-info">Soon</span>
+                        </p>
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-calculator"></i>
-                        </span>
-                        Calculette
-                        <span class="badge menu-badge bg-azure">Soon</span>
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-calculator"></i>
+                        <p>
+                            Calculette
+                            <span class="badge badge-info">Soon</span>
+                        </p>
                     </a>
                 </li>
-                <li class="dropdown-divider"></li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/" >
-                        <span class="nav-link-icon d-md-none d-lg-inline-block mr-1">
-                            <i class="icon fas fa-cubes"></i>
-                        </span>
-                        Réglages
+                <li class="nav-item border-top border-black-fade">
+                    <a href="/" class="nav-link">
+                        <i class="nav-icon fas fa-cubes"></i>
+                        <p>
+                            Réglages
+                            <span class="badge badge-info">Soon</span>
+                        </p>
                     </a>
                 </li>
+            </ul>
+        </nav>
+        {# /Menu #}
+    </section>
+{#
+
+
             </ul>
 
             <p class="text-center">Version 0.1.0</p>
         </div>
-    </div>
+    </section>
+    #}
 </aside>
