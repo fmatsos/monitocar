@@ -23,18 +23,7 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
-    .addStyleEntry('maincss', [
-        './node_modules/admin-lte/dist/css/adminlte.min.css',
-        './node_modules/@fortawesome/fontawesome-free/css/all.min.css',
-    ])
-    .addStyleEntry('appcss', [
-        './assets/css/menu.css',
-    ])
-    .addEntry('mainjs', [
-        './node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
-        './node_modules/jquery-slim/dist/jquery.slim.min.js',
-        './node_modules/admin-lte/dist/js/adminlte.min.js',
-    ])
+    .addEntry('app', './assets/js/app.js')
 
     .copyFiles({
         from: './assets/img',
@@ -78,7 +67,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     // uncomment if you use API Platform Admin (composer req api-admin)
     //.enableReactPreset()
