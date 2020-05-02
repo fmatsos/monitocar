@@ -31,8 +31,12 @@ class VehicleController extends AbstractController
      */
     public function index(VehicleRepository $vehicleRepository): Response
     {
+        $vehicle = new VehicleEntity();
+        $form = $this->createForm(VehicleType::class, $vehicle);
+
         return $this->render('vehicle/vehicle/index.html.twig', [
             'vehicles' => $vehicleRepository->findAll(),
+            'form' => $form->createView(),
         ]);
     }
 
@@ -50,13 +54,14 @@ class VehicleController extends AbstractController
             $entityManager->persist($vehicle);
             $entityManager->flush();
 
+            $this->addFlash('success', 'Votre véhicule a bien été enregistré.');
+
             return $this->redirectToRoute('vehicle_vehicle_index');
         }
 
-        return $this->render('vehicle/vehicle/new.html.twig', [
-            'vehicle' => $vehicle,
-            'form' => $form->createView(),
-        ]);
+        $this->addFlash('danger', 'Erreur lors de l\'enregistrement de votre véhicule.');
+
+        return $this->redirectToRoute('vehicle_vehicle_index');
     }
 
     /**
@@ -79,6 +84,8 @@ class VehicleController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+            $this->addFlash('success', 'Votre véhicule a bien été modifié.');
 
             return $this->redirectToRoute('vehicle_vehicle_index');
         }
