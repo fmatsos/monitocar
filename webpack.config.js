@@ -1,4 +1,5 @@
-var Encore = require('@symfony/webpack-encore');
+let Encore = require('@symfony/webpack-encore');
+let path = require('path');
 
 // Manually configure the runtime environment if not already configured yet by the "encore" command.
 // It's useful when you use tools that rely on webpack.config.js file.
@@ -24,6 +25,7 @@ Encore
      * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
      */
     .addEntry('app', './assets/js/app.js')
+    .addEntry('vehicles-components', './svelte/vehicles/vehicles.js')
 
     .copyFiles({
         from: './assets/img',
@@ -74,4 +76,30 @@ Encore
     //.addEntry('admin', './assets/js/admin.js')
 ;
 
-module.exports = Encore.getWebpackConfig();
+let config = Encore.getWebpackConfig();
+
+config.resolve.extensions.push('.mjs', '.js', '.svelte');
+config.resolve.alias.sveltePath = path.resolve('node_modules', 'svelte');
+config.resolve.mainFields = ['svelte', 'browser', 'module', 'main'];
+
+config.module.rules.push({
+    test: /\.(html|svelte)$/,
+    exclude: /node_modules/,
+    use: {
+        loader: 'svelte-loader',
+        options: {
+            //emitCss: true,
+            customElement: true,
+        },
+    }
+});
+
+/*config.module.rules.push({
+    test: /\.css$/,
+    use: ExtractTextPlugin.extract({
+        fallback: 'style-loader',
+        use: [{ loader: 'css-loader', options: { sourceMap: true } }]
+    })
+});*/
+
+module.exports = config;

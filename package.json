@@ -2,10 +2,12 @@
   "dependencies": {
     "admin-lte": "^3.0",
     "dayjs": "^1.8.24",
-    "lodash-es": "^4.17.15"
+    "lodash-es": "^4.17.15",
+    "svelte": "^3.21.0"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.29.1",
+    "svelte-loader": "^2.13.6",
     "webpack-notifier": "^1.6.0"
   },
   "scripts": {
