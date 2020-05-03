@@ -1,4 +1,6 @@
-Documentation available here (in French only) : https://docs.monitocar.app/
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](http://www.gnu.org/licenses/agpl-3.0)
+---
+Documentation available here (in French only - in progress) : https://docs.monitocar.app/
 
 ### Install instructions
 
